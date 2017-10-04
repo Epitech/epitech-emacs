@@ -5,19 +5,13 @@ A simple script to install {EPITECH.} configuration for the emacs editor.
 
 I bet you guessed it's pretty obvious. Anyway here's a sum up of what you'll have to do if you are too lazy to DIY:
 
-1. `git clone https://github.com/DeathMiner/epitech-emacs.git`
+1. `git clone https://github.com/demaisj/epitech-emacs.git`
 2. `cd epitech-emacs`
 3. `./INSTALL.sh`
 4. Enjoy.
 
-## Fun Fact / Dump Troubleshooting
+## Fun Fact
 
-**This script is in the official files of Epitech's new Fedora dump as of September 2017!**
+*An older version of this script was in the files of Epitech's new 2017 Fedora dump (the not working `confemacs` command).*
 
-Run the `confemacs` command to see it in action.
-
-*Obviously*, the new dump is still a "*bocal quality*" OS even if it does not have the "*blinux*" name. So the script won't work out of the box. **To make it work, type `cd /usr/share/confemacs` first, then enter the `confemacs` command.**
-
-Want to know why? This script was designed to be executed in its own folder, not from everywhere inside your system. *Voilà.*
-
-***GG BOCAL!***
+It has now been heavily modified by Epitech's staff and so replaced by a version that was compliant to the new coding style. The official files of the script are available on the intranet (files -> technical documentations), but i'm still providing a mirror here for easier access & posterity.
