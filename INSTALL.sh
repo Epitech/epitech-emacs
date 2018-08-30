@@ -1,15 +1,57 @@
 #!/bin/bash
 
-SRCDIR="src"
-DESTDIR="$HOME"
+function usage {
+  echo "USAGE: $0 [local|system]"
+  echo
+  echo "Official Emacs configuration for Epitech students."
+  echo -e "\tlocal:\tlocal installation"
+  echo -e "\tsystem:\tsystem-wide installation"
+  exit 0
+}
 
-echo "Installing {EPITECH.} Emacs configuration on your session..."
+function copy_files {
+  echo "Copying files..."
+  mkdir -p "$1"
 
-echo "Copying configuration files..."
-cat "$SRCDIR/.emacs" >> "$DESTDIR/.emacs"
-mkdir -p "$DESTDIR/.emacs.d/lisp"
-cp "$SRCDIR/.emacs.d/lisp/std.el" "$DESTDIR/.emacs.d/lisp/"
-cp "$SRCDIR/.emacs.d/lisp/std_comment.el" "$DESTDIR/.emacs.d/lisp/"
+  cp -r "src/epitech" "$1/epitech"
 
-echo
-echo "Installation complete."
+  mkdir -p "$1/site-start.d"
+  cp "src/site-start.d/epitech-init.el" "$1/site-start.d"
+}
+
+function local_install {
+  echo "Installing Emacs configuration locally..."
+
+  copy_files "$HOME/.emacs.d/lisp"
+
+  echo "Updating init file..."
+  cat >> "$HOME/.emacs" <<EOF
+;;
+;; Epitech configuration
+;;
+(add-to-list 'load-path "~/.emacs.d/lisp")
+(load "site-start.d/epitech-init.el")
+EOF
+
+  echo "Done."
+}
+
+function system_install {
+  echo "Installing Emacs configuration system-wide..."
+
+  copy_files "/usr/share/emacs/site-lisp"
+
+  echo "Done."
+}
+
+case "$1" in
+  local )
+    local_install
+  ;;
+  system )
+    system_install
+  ;;
+  * )
+    usage
+  ;;
+esac
