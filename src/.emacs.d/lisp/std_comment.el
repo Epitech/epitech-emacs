@@ -93,58 +93,6 @@
     (newline)
     (newline)))
 
-(defun insert-std-vertical-comments ()
-  "Inserts vertical comments (according to mode)."
-  (interactive)
-  (beginning-of-line)
-  (insert-string (std-get 'cs))
-  (newline)
-  (let ((ok t)(comment ""))
-    (while ok
-      (setq comment (read-from-minibuffer
-		     (format "Type comment (RETURN to quit) : ")))
-      (if (= 0 (length comment))
-	  (setq ok nil)
-	(progn
-	  (insert-string (concat (std-get 'cc) comment))
-	  (newline)))))
-  (insert-string (std-get 'ce))
-  (newline))
-
-(defun std-toggle-comment ()
-  "Toggles line comment on or off (according to mode)."
-  (interactive)
-  (save-excursion
-    (let (beg end)
-      (beginning-of-line)
-      (setq beg (point))
-      (end-of-line)
-      (setq end (point))
-      (save-restriction
-	(if (not (equal beg end))
-	    (progn
-	      (narrow-to-region beg end)
-	      (goto-char beg)
-	      (if (search-forward (std-get 'cs) end t)
-		  (progn
-		    (beginning-of-line)
-		    (replace-string (std-get 'cs) "")
-		    (replace-string (std-get 'ce) ""))
-		(progn
-		  (beginning-of-line)
-		  (insert-string (std-get 'cs))
-		  (end-of-line)
-		  (insert-string (std-get 'ce))))))))) 
-  ;;  (indent-according-to-mode)
-  (indent-for-tab-command)
-  (next-line 1))
-
-;;; Added by Eole Wednesday May 29 2002,  1:33:55
-;;; Extended bindings for this package and for commenting code
-
-(global-set-key "h" 'update-std-header)
-(global-set-key "" 'std-file-header)
-
 ;;;; Generating local keymaps for exotics modes.
 
 ;;; In CPerl mode, C-c C-h is used to do some help.
