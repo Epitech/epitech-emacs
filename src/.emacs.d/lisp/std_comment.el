@@ -23,11 +23,11 @@
       std-text-alist            '( (cs . "##") (cc . "## ") (ce . "##") )
       std-fundamental-alist     '( (cs . "  ") (cc . "   ") (ce . "  ") )
       std-html-alist            '( (cs . "<!--") (cc . "  -- ") (ce . "-->"))
-      std-php-alist		'( (cs . "#!/usr/local/bin/php\n<?php") (cc . "// ")(ce . "//"))
+      std-php-alist   '( (cs . "#!/usr/bin/env php\n<?php\n/*") (cc . "** ")(ce . "*/"))
       std-nroff-alist           '( (cs . "\\\"") (cc . "\\\" ") (ce . "\\\""))
-      std-sscript-alist         '( (cs . "#!/bin/sh")  (cc . "## ") (ce . "##"))
-      std-perl-alist            '( (cs . "#!/usr/local/bin/perl -w")  (cc . "## ")(ce . "##"))
-      std-cperl-alist           '( (cs . "#!/usr/local/bin/perl -w")  (cc . "## ")(ce . "##"))
+      std-sscript-alist         '( (cs . "#!/usr/bin/env bash\n##")  (cc . "## ") (ce . "##"))
+      std-perl-alist            '( (cs . "#!/usr/bin/env perl\n##")  (cc . "## ")(ce . "##"))
+      std-cperl-alist           '( (cs . "#!/usr/bin/env perl\n##")  (cc . "## ")(ce . "##"))
       )
 
 
