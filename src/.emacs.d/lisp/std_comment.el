@@ -74,22 +74,22 @@
     (setq projdescription (read-from-minibuffer
 		    (format "Type short file description (RETURN to quit) : ")))
 
-    (insert-string (std-get 'cs))
+    (insert (std-get 'cs))
     (newline)
-    (insert-string (concat (std-get 'cc)
+    (insert (concat (std-get 'cc)
 			   header-epitech
 			   (format-time-string "%Y")))
     (newline)
-    (insert-string (concat (std-get 'cc)
+    (insert (concat (std-get 'cc)
 			   projname))
     (newline)
-    (insert-string (concat (std-get 'cc)
+    (insert (concat (std-get 'cc)
 			   header-description))
     (newline)
-    (insert-string (concat (std-get 'cc)
+    (insert (concat (std-get 'cc)
 			   projdescription))
     (newline)
-    (insert-string (std-get 'ce))
+    (insert (std-get 'ce))
     (newline)
     (newline)))
 
