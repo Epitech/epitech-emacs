@@ -1,8 +1,8 @@
 ;;
-;; EPITECH PROJECT, 2017
-;; emacs configuration
+;; EPITECH PROJECT, 2018
+;; epitech-emacs
 ;; File description:
-;; global emacs configuration to help students
+;; global emacs configuration
 ;;
 
 (set-variable 'c-argdecl-indent   0)

@@ -1,4 +1,10 @@
 #!/bin/bash
+##
+## EPITECH PROJECT, 2018
+## epitech-emacs
+## File description:
+## emacs configurations installer
+##
 
 function usage {
   echo "USAGE: $0 [local|system]"

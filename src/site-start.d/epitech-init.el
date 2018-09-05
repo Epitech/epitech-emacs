@@ -1,6 +1,6 @@
 ;;
 ;; EPITECH PROJECT, 2018
-;; emacs configuration
+;; epitech-emacs
 ;; File description:
 ;; autoload epitech configuration on startup
 ;;
