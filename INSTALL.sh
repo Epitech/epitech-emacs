@@ -23,6 +23,8 @@ function copy_files {
 
   mkdir -p "$1/site-start.d"
   cp "src/site-start.d/epitech-init.el" "$1/site-start.d"
+
+  cp "LICENSE" "$1/LICENSE"
 }
 
 function local_install {
