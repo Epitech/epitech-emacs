@@ -16,6 +16,13 @@ function usage {
 }
 
 function copy_files {
+
+    if [ -d "$1/epitech" ]
+    then
+        echo "Cleaning old directory..."
+        rm -r "$1/epitech"
+    fi
+    
   echo "Copying files..."
   mkdir -p "$1"
 
@@ -32,15 +39,21 @@ function local_install {
 
   copy_files "$HOME/.emacs.d/lisp"
 
-  echo "Updating init file..."
-  cat >> "$HOME/.emacs" <<EOF
-;;
+  if [ ! -f "$HOME/.emacs" ] ||
+         [ `grep -c "^;; Epitech configuration" "$HOME/.emacs"` == 0 ]
+  then
+      echo "Updating init file..."
+      cat >> "$HOME/.emacs" <<EOF
+;;    
 ;; Epitech configuration
 ;;
 (add-to-list 'load-path "~/.emacs.d/lisp")
 (load "site-start.d/epitech-init.el")
 EOF
-
+  else
+      echo "Init file already fixed, skipping updating."
+  fi
+  
   echo "Done."
 }
 
