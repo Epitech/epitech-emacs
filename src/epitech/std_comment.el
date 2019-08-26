@@ -5,7 +5,7 @@
 ;; standard epitech header configuration
 ;;
 
-(global-set-key "" 'std-file-header)
+(global-set-key (kbd "C-c C-h") 'std-file-header)
 
 (setq header-epitech     "EPITECH PROJECT, "
       header-description "File description:")
@@ -108,26 +108,26 @@
 ;;; For working, it requires info pages about perl
 (add-hook 'cperl-mode-hook
           '(lambda ()
-             (define-key cperl-mode-map ""
+             (define-key cperl-mode-map (kbd "C-c C-c")
                'comment-region)
-             (define-key cperl-mode-map "h"
+             (define-key cperl-mode-map (kbd "C-c C-h h")
                'std-file-header)))
 
 ;; for perl-mode
 (add-hook 'perl-mode-hook
           '(lambda ()
-             (define-key perl-mode-map ""
+             (define-key perl-mode-map (kbd "C-c C-c")
                'comment-region)))
 
 ;; for all kind of lisp code
 (add-hook 'emacs-lisp-mode-hook
            '(lambda ()
-              (define-key emacs-lisp-mode-map  ""
+              (define-key emacs-lisp-mode-map (kbd "C-c C-c")
                 'comment-region)))
 
 (add-hook 'lisp-mode-hook
            '(lambda ()
-              (define-key lisp-mode-map  ""
+              (define-key lisp-mode-map (kbd "C-c C-c")
                 'comment-region)))
 
 
@@ -135,6 +135,5 @@
 ;; for La(TeX)-mode
 (add-hook 'tex-mode-hook
           '(lambda ()
-             (define-key tex-mode-map ""
+             (define-key tex-mode-map (kbd "C-c C-c")
                'comment-region)))
-
