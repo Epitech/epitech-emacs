@@ -31,6 +31,7 @@
       std-python-alist          '( (cs . "#!/usr/bin/env python3\n##") (cc . "## ") (ce . "##") )
       std-ruby-alist            '( (cs . "#!/usr/bin/env ruby\n##") (cc . "## ") (ce . "##") )
       std-node-alist            '( (cs . "#!/usr/bin/env node\n/*") (cc . "** ") (ce . "*/") )
+      std-haskell-alist         '( (cs . "{-") (cc . "-- ") (ce . "-}") )
       )
 
 
@@ -64,7 +65,8 @@
                         ("LaTeX"                . std-latex-alist)
                         ("Python"               . std-python-alist)
                         ("Ruby"                 . std-ruby-alist)
-                        ("JavaScript"           . std-node-alist))
+                        ("JavaScript"           . std-node-alist)
+                        ("Haskell"              . std-haskell-alist))
       )
 
 (defun std-get (a)
