@@ -62,6 +62,17 @@ function system_install {
 
   copy_files "/usr/share/emacs/site-lisp"
 
+  for home in /home/*; do
+    echo "Updating init file in $home..."
+    cat >> "$home/.emacs" <<EOF
+;;
+;; Epitech configuration
+;;
+(add-to-list 'load-path "/usr/share/emacs/site-lisp")
+(load "site-start.d/epitech-init.el")
+EOF
+  done
+
   echo "Done."
 }
 
